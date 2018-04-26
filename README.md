@@ -2,23 +2,5 @@
 
 Use:
 
-UITextField *textFiled = [[UITextField alloc] initWithFrame:CGRectMake(20, 100, 200, 30)];
-textFiled.backgroundColor = [UIColor redColor];
-textFiled.inputView = self.numberKeyboard;
-[self.view addSubview:textFiled];
-self.numberKeyboard.mark = @"xxx安全键盘";
-self.numberKeyboard.isPoint = NO;  //设置yes  是有小数点的（但不包括字母和符号了）
-self.numberKeyboard.myBlock = ^(KEYBOARDCLICKSTATUS status,NSString *text) {
-switch (status) {
-case KEYBOARDDOWN: //键盘收起
-[textFiled resignFirstResponder];
-break;
-case OUTPUTSTRING: //输出
-textFiled.text = text;
-break;
-default:
-break;
-}
-};
 
-
+![](https://cjbphoto.oss-cn-hangzhou.aliyuncs.com/key.mov?Expires=1524714689&OSSAccessKeyId=TMP.AQF5s72v6Crx0uYxIEEVy41MwHd4IjcmJRAkmP2PTAjF60eDW8Crvlhq7PqGADAtAhRCVvE__AstzcBGMfUt0Wzu0cXK5wIVAPBZIspS5fkDsg6hkK8oVCvm4XE9&Signature=%2FR%2BEYv5864BEXnAh9J1udlBuiOc%3D)
