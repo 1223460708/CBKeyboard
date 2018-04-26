@@ -10,7 +10,7 @@
 #import "CBCustomKeyboard.h"
 #define SCREEN_WIDTH [UIScreen mainScreen].bounds.size.width
 #define SCREEN_HEIGHT [UIScreen mainScreen].bounds.size.height
-@interface ViewController ()
+@interface ViewController ()<UITextFieldDelegate>
 @property (nonatomic,strong)CBCustomKeyboard *numberKeyboard;
 @end
 
@@ -29,7 +29,8 @@
     textFiled.backgroundColor = [UIColor redColor];
     textFiled.inputView = self.numberKeyboard;
     [self.view addSubview:textFiled];
-    
+    self.numberKeyboard.mark = @"xxx安全键盘";
+    self.numberKeyboard.isPoint = NO;  //设置yes  是有小数点的（但不包括字母和符号了）
     self.numberKeyboard.myBlock = ^(KEYBOARDCLICKSTATUS status,NSString *text) {
         switch (status) {
             case KEYBOARDDOWN: //键盘收起
@@ -44,6 +45,9 @@
     };
 }
 
+- (void)textFieldDidBeginEditing:(UITextField *)textField{
+    
+}
 
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
